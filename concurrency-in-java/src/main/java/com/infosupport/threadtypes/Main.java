@@ -1,4 +1,4 @@
-package com.infosupport;
+package com.infosupport.threadtypes;
 
 public class Main {
     public static void main(String[] args) {

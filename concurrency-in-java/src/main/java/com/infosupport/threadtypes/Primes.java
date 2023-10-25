@@ -1,4 +1,4 @@
-package com.infosupport;
+package com.infosupport.threadtypes;
 
 import java.util.ArrayList;
 import java.util.List;
