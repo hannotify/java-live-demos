@@ -19,4 +19,10 @@ public record Luchtalarm(String plaats, int testduurInSeconden) {
                     }
                 });
     }
+
+    public String testWithResult() {
+        test();
+
+        return plaats;
+    }
 }
