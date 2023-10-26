@@ -2,7 +2,7 @@ package com.infosupport.threadtypes;
 
 public class ThreadTypes {
     public static void main(String[] args) {
-        printInfo(Thread.currentThread());
+        printThreadInfo(Thread.currentThread());
         //Thread.getAllStackTraces().keySet().forEach(ThreadTypes::printInfo);
 
         Thread primes = new Thread(() -> Primes.calculatePrimes(1, 100_001));
@@ -17,11 +17,11 @@ public class ThreadTypes {
         primes.start();
         primesDaemon.start();
 
-        printInfo(primes);
-        printInfo(primesDaemon);
+        printThreadInfo(primes);
+        printThreadInfo(primesDaemon);
     }
 
-    private static void printInfo(Thread thread) {
+    public static void printThreadInfo(Thread thread) {
         System.out.print(thread);
         System.out.println(thread.isDaemon() ? " (daemon thread)" : " (user thread)");
         System.out.format("Total # of threads: %d%n", Thread.activeCount());
