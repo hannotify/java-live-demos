@@ -5,7 +5,7 @@ public class MaxNumberOfThreads {
 
     public static void main(String[] args) {
         while (true) {
-            new Thread(() -> {
+            Thread.ofVirtual().start(() -> {
                 count++;
 
                 System.out.println("New thread #" + count);
@@ -17,7 +17,7 @@ public class MaxNumberOfThreads {
                         System.err.println(e);
                     }
                 }
-            }).start();
+            });
         }
 
     }

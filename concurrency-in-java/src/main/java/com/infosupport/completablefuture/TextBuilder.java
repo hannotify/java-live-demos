@@ -8,6 +8,8 @@ import java.util.concurrent.Executors;
 
 public class TextBuilder {
     public static void main(String[] args) throws InterruptedException {
+        new BestPriceFinder().hanno = 42;
+
         var fixedExecutor = Executors.newFixedThreadPool(2);
 
         CompletableFuture<String> textBuilder = CompletableFuture

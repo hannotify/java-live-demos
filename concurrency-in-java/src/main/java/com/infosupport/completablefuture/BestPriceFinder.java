@@ -8,8 +8,10 @@ import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 public class BestPriceFinder {
+    protected int hanno;
+
     public static void main(String[] args) {
-        var amazonPrice = CompletableFuture.supplyAsync(supplyPrice("AmazonAmazon", 1, 8));
+        var amazonPrice = CompletableFuture.supplyAsync(supplyPrice("Amazon", 1, 8));
         var coolbluePrice = CompletableFuture.supplyAsync(supplyPrice("Coolblue", 3, 11));
         var bolComPrice = CompletableFuture.supplyAsync(supplyPrice("bol.com" , 2, 13));
 
@@ -24,7 +26,7 @@ public class BestPriceFinder {
         }
     }
 
-    private static Supplier<StorePrice> supplyPrice(String store, int min, int max) {
+    protected static Supplier<StorePrice> supplyPrice(String store, int min, int max) {
         return () -> {
             int randomPrice = ThreadLocalRandom.current().nextInt(min, max + 1);
 
@@ -41,8 +43,8 @@ public class BestPriceFinder {
         };
     }
 
-    private static StorePrice storeWithLowestPrice(StorePrice a, StorePrice b) {
-        return Stream.of(a, b)
+    private static StorePrice storeWithLowestPrice(StorePrice... storePrices) {
+        return Stream.of(storePrices)
                 .sorted()
                 .findFirst()
                 .get();
