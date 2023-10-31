@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="dbjdbc" />
+        <module name="reflection" />
+        <module name="streams" />
         <module name="training-application" />
         <module name="student-service" />
         <module name="jpa" />
-        <module name="reflection" />
         <module name="concurrency-in-java" />
-        <module name="streams" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
