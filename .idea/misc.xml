@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/javamod/jigsaw/student-service/pom.xml" />
         <option value="$PROJECT_DIR$/javamod/jigsaw/training-application/pom.xml" />
         <option value="$PROJECT_DIR$/db-jdbc/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
