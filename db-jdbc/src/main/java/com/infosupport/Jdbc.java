@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Optional;
 
 public class Jdbc {
     private static Jdbc INSTANCE;
@@ -66,10 +67,10 @@ public class Jdbc {
     }
 
     public ResultSet executeSelect(String selectQuery) {
-        try (Statement statement = connection.createStatement()) {
+        try {
+            Statement statement = connection.createStatement();
             return statement.executeQuery(selectQuery);
         } catch (SQLException e) {
-            System.err.println("Failed to execute select query: " + e.getMessage());
             throw new RuntimeException(e);
         }
     }
