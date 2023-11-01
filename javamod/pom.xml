@@ -18,5 +18,12 @@
     <modules>
         <module>jigsaw</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.3.0.CR1</version>
+        </dependency>
+    </dependencies>
 
 </project>
