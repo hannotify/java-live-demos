@@ -3,6 +3,7 @@ package com.infosupport;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -25,14 +26,56 @@ public class Jdbc {
 
     public void connect() {
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:6306", "root", "secure");
-            connection.setAutoCommit(false);
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:6306/pubs", "root", "secure");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void executeQuery(String query) {
+    public void disconnect() {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void execute(String query) throws SQLException {
+        connection.setAutoCommit(false);
+
+        try (Statement statement = connection.createStatement()) {
+            statement.execute(query);
+            connection.commit();
+        } catch (SQLException e) {
+            System.err.println("Transaction aborted. Something in the database went wrong: " + e.getMessage());
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+        }
+    }
+
+    public void executePreparedStatement(String query, String... params) throws SQLException {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            for (int i = 0; i < params.length; i++) {
+                preparedStatement.setString(i + 1, params[i]);
+            }
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            System.out.println("rows affected: " + rowsAffected);
+        }
+    }
+
+    public ResultSet executeSelect(String selectQuery) {
+        try (Statement statement = connection.createStatement()) {
+            return statement.executeQuery(selectQuery);
+        } catch (SQLException e) {
+            System.err.println("Failed to execute select query: " + e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void executeQuery(String query) throws SQLException {
+        connection.setAutoCommit(false);
         try (Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(query);
 
@@ -47,18 +90,12 @@ public class Jdbc {
                         titleId, advance, notes, pubdate, title);
             }
             printMetadata(resultSet.getMetaData());
-        } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
-            throw new RuntimeException(e);
-        }
-        try {
             connection.commit();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.err.println("Transaction aborted. Something in the database went wrong: " + e.getMessage());
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
         }
     }
 
