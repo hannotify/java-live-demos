@@ -1,5 +1,9 @@
-package com.infosupport.movies;
+package com.infosupport.movies.relationships;
 
+import com.infosupport.movies.relationships.relationships.Actor;
+import com.infosupport.movies.relationships.relationships.Award;
+import com.infosupport.movies.relationships.relationships.Movie;
+import com.infosupport.movies.relationships.relationships.MovieRating;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
@@ -38,7 +42,7 @@ class MovieTest {
     @Test
     void persistMovieWithRatings() {
         Movie flowerMoon = new Movie("Killings of the Flower Moon");
-        flowerMoon.setRating(new MovieRating(8.0));
+        flowerMoon.setMovieRating(new MovieRating(8.0));
 
         em.persist(flowerMoon);
         em.persist(flowerMoon.getMovieRating());
@@ -48,7 +52,7 @@ class MovieTest {
     void persistMovieRating() {
         Movie flowerMoon = new Movie("Killings of the Flower Moon");
         MovieRating rating = new MovieRating(8.0);
-        flowerMoon.setRating(rating);
+        flowerMoon.setMovieRating(rating);
 
         em.persist(rating);
         em.persist(flowerMoon);
@@ -63,6 +67,38 @@ class MovieTest {
 
         em.persist(oppenheimer);
         em.persist(bestMovie2023);
+    }
+
+    @Test
+    void persistPrequel() {
+        Movie theMatrix = new Movie("The Matrix");
+        Movie matrixReloaded = new Movie("The Matrix Reloaded");
+        matrixReloaded.setPrequel(theMatrix);
+
+        em.persist(theMatrix);
+        em.persist(matrixReloaded);
+    }
+
+    @Test
+    void persistCascadedMovie() {
+        Movie theGreenMile = new Movie("The Green Mile");
+        theGreenMile.setMovieRating(new MovieRating(9.0));
+
+        em.persist(theGreenMile);
+        em.remove(theGreenMile);
+    }
+
+    @Test
+    void persistActors() {
+        Movie nottingHill = new Movie("Notting Hill");
+
+        Actor hughGrant = new Actor("Hugh Grant");
+        Actor juliaRoberts = new Actor("Julia Roberts");
+
+        nottingHill.addActor(hughGrant);
+        nottingHill.addActor(juliaRoberts);
+
+        em.persist(nottingHill);
     }
 
     @AfterEach

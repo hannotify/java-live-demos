@@ -1,4 +1,4 @@
-package com.infosupport.movies;
+package com.infosupport.movies.relationships.relationships;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
