@@ -42,5 +42,6 @@
     <modules>
         <module>relationships</module>
         <module>inheritance</module>
+        <module>jpql</module>
     </modules>
 </project>
