@@ -1,7 +1,5 @@
 package com.infosupport.movies.inheritance.table;
 
-import com.infosupport.movies.inheritance.joinedtable.MovieJoined;
-import com.infosupport.movies.inheritance.joinedtable.SeriesJoined;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
