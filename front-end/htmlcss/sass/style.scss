@@ -1,0 +1,22 @@
+$baseColor: red;
+
+div {
+    width: 400px;
+    height: 50px;
+  }
+  
+  #my-id {
+    color: $baseColor;
+    background: rgb(221, 217, 196);
+    border: 5px solid $baseColor;
+
+    .person {
+      font-weight: bold;
+    }
+  }
+
+  .my-class {
+    text-align: center;
+    color: pink;
+  }
+  
