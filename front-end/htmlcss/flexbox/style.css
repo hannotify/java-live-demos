@@ -1,0 +1,15 @@
+#container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    background-color: rgb(168, 165, 165);
+    width: 80%;
+    margin-left: 1em;
+}
+
+.box {
+    background-color: red;
+    color: white;
+    padding: 1em;
+    margin: .5em;
+}

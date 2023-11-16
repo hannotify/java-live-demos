@@ -1,6 +1,7 @@
 <html>
     <head>
         <link href="style.css" rel="stylesheet" />
+        <script src="script.js" defer></script>
     </head>
     <body>
         <table>
@@ -14,21 +15,12 @@
             </tr>
             <tr>
                 <td>Thomas</td>
-                <td>Enschede</td>
+                <td id="homeTownThomas">Enschede</td>
             </tr>
         </table>
 
-        <template id="task-template">
-            <input type="checkbox"><input type="text">
-        </template>
-
-        <article hidden>
-            <h1>Policy</h1>
-            <p>Amet explicabo excepturi ea, consequuntur, aliquam ipsum.</p>
-        </article>
-
-        <div class="my-class" id= "my-id" style="color: blue;">
-            Hello World
-        </div>
+        <label for="newHometown">New hometown for Thomas:</label>
+        <input type="text" name="newHometown" id="newHometown"/>
+        <button name="thomasIsMoving" id="moveBtn">Let's make Thomas move homes!</button>
     </body>
 </html>
