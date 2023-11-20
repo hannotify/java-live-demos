@@ -1,7 +1,16 @@
-const a = 3;
+interface Colored {
+    color: string;
 
-if (a < 3) {
-    let b = a;
+    printColor(): void
 }
 
-console.log(b);
+class Point {
+}
+  
+class ColoredPoint extends Point implements Colored {
+    color = 'blue';
+
+    printColor(): void {
+        
+    }
+}

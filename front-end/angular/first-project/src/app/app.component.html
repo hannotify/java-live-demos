@@ -1,3 +1,23 @@
+
+<h1>Hello {{recipient}}!</h1>
+
+<p [hidden]="isHidden">Hidden paragraph</p>
+<p>Shown paragraph</p>
+
+<button (click)="toggleHidden()">
+  <span *ngIf="isHidden">Show</span>
+  <span *ngIf="!isHidden">Hide</span>
+  hidden paragraphs
+</button>
+<p *ngIf="!isHidden">Hidden paragraph</p>
+
+<!-- <img [src]="imageLocation" />
+<img src="{{imageLocation}}" /> -->
+
 <ul>
-  <li *ngFor="let car of cars">{{car.make}} {{car.model}}</li>
+  <li *ngFor="let car of cars" [class.expensive]="car.price > 15000">{{car.make}} {{car.model}}</li>
 </ul>
+
+<button (blur)="printToConsole()">Print on console</button>
+
+<a href="https://angular.io/docs/js/latest/quickstart.html">Go to the Angular Quickstart Guide</a>
