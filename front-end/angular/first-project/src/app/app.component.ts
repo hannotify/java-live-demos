@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  recipient: string = '<strong>Jesper</strong>'
+  recipient: string = 'Jesper'
   imageLocation: string = '/assets/img/angular.svg'
   isHidden: boolean = false
 

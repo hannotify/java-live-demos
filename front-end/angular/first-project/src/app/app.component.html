@@ -1,6 +1,8 @@
 
 <h1>Hello {{recipient}}!</h1>
 
+<h2>{{recipient | greet | emojify }}</h2>
+
 <p [hidden]="isHidden">Hidden paragraph</p>
 <p>Shown paragraph</p>
 

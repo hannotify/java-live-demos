@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { GreetPipe } from './greet.pipe';
+import { EmojifyPipe } from './emojify.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent, GreetPipe
+    AppComponent, GreetPipe, EmojifyPipe
   ],
   imports: [
     BrowserModule

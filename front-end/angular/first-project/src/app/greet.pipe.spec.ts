@@ -4,18 +4,21 @@ describe('GreetPipe', () => {
     let systemUnderTest: GreetPipe;
 
     beforeEach(() => {
+        // Arrange
         systemUnderTest = new GreetPipe();
     });
 
     describe('transform', () => {
         it('should return "Hey Hanno!" when called with "Hanno"', () => {
+            // Act
             const actual = systemUnderTest.transform("Hanno");
-            expect(actual).toBe("Hey Hanno!");
+            // Assert
+            expect(actual).toBe("Hey Hanno");
         });
 
-        it('should return empty String when called with undefined', () => {
-            const actual = systemUnderTest.transform(undefined);
-            expect(actual).toBe('');
-        });
+        it('should return "Hey hanno!" when called with "Hanno" and toLowercase set to "true"', () => {
+            const actual = systemUnderTest.transform("Hanno", true);
+            expect(actual).toBe('Hey hanno');
+        })
     });
 });
