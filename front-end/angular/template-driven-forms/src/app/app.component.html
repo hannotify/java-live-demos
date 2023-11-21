@@ -1,0 +1,17 @@
+<h1>Saving postal code '{{postalCode}}'</h1>
+
+<form (ngSubmit)="save(addressForm)" novalidate #addressForm="ngForm">
+  <label for="inputPostalCode">Postal code:</label>
+  <input
+    type="text"
+    id="inputPostalCode"
+    [(ngModel)]="postalCode"
+    name="postalCode"
+    required
+    pattern="[1-9][0-9]{3}\s?[A-Z|a-z]{2}"
+    #postalCodeElement="ngModel"
+  />
+  <div *ngIf="postalCodeElement.touched && postalCodeElement.invalid">Please provide a valid postal code.</div>
+
+  <button>Save</button>
+</form>
