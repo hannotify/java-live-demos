@@ -1,0 +1,8 @@
+<h1>Car Overview</h1>
+
+<ul>
+    <li *ngFor="let car of cars">
+        <a [routerLink]="['/cars', car.id]">{{car.make}} {{car.type}}</a> / 
+        <a href="/cars/{{car.id}}">{{car.make}} {{car.type}}</a>
+    </li>
+</ul>

@@ -1,0 +1,24 @@
+<h1>View Car Details</h1>
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page"><a routerLink="/cars">Back to cars overview</a></li>
+</ol>
+</nav>
+
+<table *ngIf="car">
+    <tbody>
+        <tr>
+            <th>Make</th>
+            <td>{{car.make}}</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>{{car.type}}</td>
+        </tr>
+        <tr>
+            <th>HP</th>
+            <td>{{car.hp}}</td>
+        </tr>
+    </tbody>
+</table>

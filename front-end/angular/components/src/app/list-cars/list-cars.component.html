@@ -1,0 +1,6 @@
+<app-loading message="Very busy retrieving cars..." *ngIf="!cars; else showCars"></app-loading>
+<ng-template #showCars>
+    <ul>
+      <li *ngFor="let car of cars">{{car.make}} {{car.type}}</li>
+    </ul>
+</ng-template>
