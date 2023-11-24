@@ -10,7 +10,7 @@ We'll use servlets, EJBs, JPA, REST resources and OpenLiberty.
     - Java SE Version: `17`
     - Jakarta EE Version: `10`
     - MicroProfile Version: `6`
-1. Extract the zip archive.
-1. Open the resulting directory with IntelliJ IDEA and add the `pom.xml` as Maven project.
-1. Run the Maven goal `liberty:dev`. The OpenLiberty server will start up and keep running to automatically deploy any changes you might do.
-1. Create a `ListBandsServlet` that’s connected to url `/bands/list`. It should write a simple HTML response that contains a list of band names (can be a static list for now!).
+2. Extract the zip archive.
+3. Open the resulting directory with IntelliJ IDEA and add the `pom.xml` as Maven project.
+4. Run the Maven goal `liberty:dev`. The OpenLiberty server will start up and keep running to automatically deploy any changes you might do.
+5. Create a `ListBandsServlet` that’s connected to url `/bands/list`. It should write a simple HTML response that contains a list of band names (can be a static list for now!).
