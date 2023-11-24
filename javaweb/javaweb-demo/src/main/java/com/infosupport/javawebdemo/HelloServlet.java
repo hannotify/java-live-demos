@@ -1,6 +1,8 @@
 package com.infosupport.javawebdemo;
 
 import java.io.*;
+import java.time.LocalDate;
+import java.util.Date;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
@@ -14,7 +16,7 @@ public class HelloServlet extends HttpServlet {
         // Om een input-veld uit een form uit te lezen.
         // <input type="text" name="emailAddress">
         request.getParameter("emailAddress");
-
+        request.setAttribute("today", LocalDate.now());
         request.getRequestDispatcher("hello.jsp").forward(request, response);
     }
 

@@ -15,7 +15,7 @@
         <module>javamod</module>
         <module>jpa</module>
         <module>streams</module>
-        <module>javaweb</module>
+        <module>javaweb/javaweb-demo</module>
         <module>jakartaee</module>
     </modules>
 
