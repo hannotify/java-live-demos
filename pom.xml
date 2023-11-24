@@ -15,6 +15,8 @@
         <module>javamod</module>
         <module>jpa</module>
         <module>streams</module>
+        <module>javaweb</module>
+        <module>jakartaee</module>
     </modules>
 
     <dependencyManagement>

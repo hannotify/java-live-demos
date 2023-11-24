@@ -10,7 +10,9 @@
         <module name="relationships" />
         <module name="dbjdbc" />
         <module name="reflection" />
+        <module name="javaweb" />
         <module name="streams" />
+        <module name="jakartaee" />
         <module name="training-application" />
         <module name="student-service" />
         <module name="inheritance" />
@@ -20,6 +22,7 @@
     <bytecodeTargetLevel>
       <module name="jpa (1)" target="21" />
       <module name="jpa (2)" target="21" />
+      <module name="movies-web" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>

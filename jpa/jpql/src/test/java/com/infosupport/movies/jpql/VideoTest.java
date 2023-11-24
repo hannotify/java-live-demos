@@ -156,6 +156,15 @@ public class VideoTest {
         assertThat(selectQuery.getResultList().size()).isEqualTo(1);
     }
 
+    @Test
+    void testSelectOnManyToMany() {
+
+        Query rawQuery = em.createQuery("select count(*) from Video_Actor v");
+        Object resultObject = rawQuery.getSingleResult();
+
+//        Long result = query.getSingleResult();
+    }
+
     @AfterEach
     void afterEach() {
         transaction.commit();
