@@ -20,3 +20,7 @@ Before starting the remainder of this lab, remember that a concert cannot exist 
 ## If time permits
 
 12. Test and assert the expected behaviour of your REST endpoints using the [REST Assured](https://github.com/rest-assured/rest-assured) library.
+
+## If even more time permits
+
+13. Read through the [HATEOAS lab](https://openliberty.io/guides/rest-hateoas.html) (by the Open Liberty team) and try to extend your own REST API with HATEOAS capabilities.
