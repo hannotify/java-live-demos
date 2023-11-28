@@ -5,11 +5,16 @@
     <featureManager>
         <feature>jakartaee-10.0</feature>
         <feature>microProfile-6.0</feature>
-        <feature>jdbc-4.3</feature>
         <feature>persistence-3.1</feature>
     </featureManager>
 
-    <logging traceSpecification="JPA=all" />
+    <logging  traceSpecification="eclipselink.sql=all"
+              consoleSource="trace"
+              consoleLogLevel="INFO"
+              traceFileName="trace.log"
+              maxFileSize="20"
+              maxFiles="10"
+              traceFormat="BASIC" />
 
     <!-- This template enables security. To get the full use of all the capabilities, a keystore and user registry are required. -->
 
