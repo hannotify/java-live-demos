@@ -18,6 +18,6 @@ public class AddMovieServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         databaseBean.addMovie("Home Alone");
-
+        //req.getRequestDispatcher("addMovie.jsp").forward(req, resp);
     }
 }
