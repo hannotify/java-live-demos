@@ -2,7 +2,8 @@
 
 Now we'll create a new REST API that we'll connect to the Angular frontend we created during the ANGULAR course.
 
-1. Create both a `Contact` JPA entity and DTO class that holds the following fields:
+1. Create a new package `contacts` to separate it from the bands&concerts domain.
+1. Create both a `Contact` JPA entity and a DTO class that holds the following fields:
    * int id;
    * String firstName;
    * String email;
