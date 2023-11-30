@@ -8,13 +8,7 @@
         <feature>persistence-3.1</feature>
     </featureManager>
 
-    <logging  traceSpecification="eclipselink.sql=all"
-              consoleSource="trace"
-              consoleLogLevel="INFO"
-              traceFileName="trace.log"
-              maxFileSize="20"
-              maxFiles="10"
-              traceFormat="BASIC" />
+    <logging traceSpecification="eclipselink=all" />
 
     <!-- This template enables security. To get the full use of all the capabilities, a keystore and user registry are required. -->
 
