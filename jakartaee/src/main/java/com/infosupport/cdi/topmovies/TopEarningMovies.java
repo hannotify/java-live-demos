@@ -1,10 +1,11 @@
 package com.infosupport.cdi.topmovies;
 
 import com.infosupport.model.Movie;
+import jakarta.enterprise.inject.Default;
 
 import java.util.List;
 
-//@TopEarning
+@TopEarning
 public class TopEarningMovies implements TopMovies {
     @Override
     public List<Movie> listTopMovies() {

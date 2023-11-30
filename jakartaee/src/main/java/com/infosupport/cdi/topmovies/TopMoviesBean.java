@@ -5,15 +5,8 @@ import jakarta.inject.Inject;
 
 @Singleton
 public class TopMoviesBean {
+    @Inject @TopRated
     private TopMovies topMovies;
-
-    public TopMoviesBean() {
-    }
-
-    //@Inject @TopEarning
-    public void setTopMovies(TopMovies topMovies) {
-        this.topMovies = topMovies;
-    }
 
     public void printTopMovies() {
         System.out.println("Top Movies: ");

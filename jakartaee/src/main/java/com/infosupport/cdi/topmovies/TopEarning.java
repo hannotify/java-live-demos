@@ -10,6 +10,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Qualifier
 @Retention(RUNTIME)
-@Target({TYPE, PARAMETER, FIELD, METHOD, CONSTRUCTOR})
+@Target({TYPE, METHOD, FIELD, PARAMETER})
 public @interface TopEarning {
 }
