@@ -1,7 +1,11 @@
 package com.infosupport.view;
 
+import com.infosupport.events.MovieAdded;
 import com.infosupport.model.DatabaseBean;
+import com.infosupport.model.Movie;
 import jakarta.ejb.EJB;
+import jakarta.enterprise.event.Event;
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,9 +19,13 @@ public class AddMovieServlet extends HttpServlet {
     @EJB
     DatabaseBean databaseBean;
 
+    @Inject
+    Event<MovieAdded> movieAddedEvent;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        databaseBean.addMovie("Home Alone");
-        //req.getRequestDispatcher("addMovie.jsp").forward(req, resp);
+        String homeAlone = "Home Alone";
+        databaseBean.addMovie(homeAlone);
+        movieAddedEvent.fire(new MovieAdded(new Movie(homeAlone)));
     }
 }

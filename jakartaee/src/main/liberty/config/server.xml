@@ -6,9 +6,15 @@
         <feature>jakartaee-10.0</feature>
         <feature>microProfile-6.0</feature>
         <feature>persistence-3.1</feature>
+        <feature>adminCenter-1.0</feature>
     </featureManager>
 
+    <administrator-role>
+        <user>hanno</user>
+    </administrator-role>
+
     <logging traceSpecification="eclipselink=all" />
+
 
     <!-- This template enables security. To get the full use of all the capabilities, a keystore and user registry are required. -->
 
@@ -27,6 +33,7 @@
         <!--
         <user name="yourUserName" password="" />
         -->
+        <user name="hanno" password="hermanus" />
     </basicRegistry>
 
     <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
