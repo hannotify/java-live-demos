@@ -19,6 +19,7 @@ Before starting the remainder of this lab, remember that a concert cannot exist 
 
 ## If time permits
 
+12. Introduce custom exceptions and ExceptionMappers, so that errors lead to appropriate REST responses automatically.
 12. Test and assert the expected behaviour of your REST endpoints using the [REST Assured](https://github.com/rest-assured/rest-assured) library.
 
 ## If even more time permits
