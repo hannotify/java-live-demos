@@ -18,9 +18,6 @@ public class DatabaseBean {
     @Inject
     HelloBean bean;
 
-    //@Inject
-    //TopMoviesBean topMoviesBean;
-
     public Collection<Movie> getAllMovies() {
         return List.of(new Movie("Goodfellas"),
                 new Movie("Forrest Gump"),
@@ -31,7 +28,5 @@ public class DatabaseBean {
 
     public void addMovie(String name) {
         em.persist(new Movie(name));
-        System.out.println(bean);
-        //topMoviesBean.printTopMovies();
     }
 }
