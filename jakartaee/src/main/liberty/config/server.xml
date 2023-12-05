@@ -5,6 +5,8 @@
     <featureManager>
         <feature>jakartaee-10.0</feature>
         <feature>microProfile-6.0</feature>
+        <feature>messaging-3.1</feature>
+        <feature>mdb-4.0</feature>
         <feature>persistence-3.1</feature>
         <feature>adminCenter-1.0</feature>
     </featureManager>
@@ -14,6 +16,36 @@
     </administrator-role>
 
     <logging traceSpecification="eclipselink=all" />
+
+    <messagingEngine>
+        <queue id="awardsQueue" />
+        <topic id="awardsTopic" />
+    </messagingEngine>
+
+    <jmsQueueConnectionFactory jndiName="jms/connectionFactory">
+        <properties.wasJms remoteServerAddress="localhost:7276:BootStrapBasicMessaging" />
+    </jmsQueueConnectionFactory>
+
+    <jmsQueue id="awardsJmsQueue" jndiName="jms/awards">
+        <properties.wasJms queueName="awardsQueue" />
+    </jmsQueue>
+
+    <jmsTopic id="awardsJmsTopic" jndiName="jms/awardsTopic">
+        <properties.wasJms topicName="awardsTopic" />
+    </jmsTopic>
+
+    <jmsActivationSpec id="movies/awardsActivationSpec">
+        <properties.wasJms destination="awardsJmsQueue" destinationType="jakarta.jms.Queue" />
+    </jmsActivationSpec>
+
+    <jmsActivationSpec id="movies/awardsTopicMovieMdb">
+        <properties.wasJms destination="awardsJmsTopic" destinationType="jakarta.jms.Topic" />
+    </jmsActivationSpec>
+
+    <jmsActivationSpec id="movies/awardsTopicPeopleMdb">
+        <properties.wasJms destination="awardsJmsTopic" destinationType="jakarta.jms.Topic" />
+    </jmsActivationSpec>
+
 
 
     <!-- This template enables security. To get the full use of all the capabilities, a keystore and user registry are required. -->
@@ -46,6 +78,14 @@
 
     <!-- Configures the application on a specified context root -->
     <webApplication contextRoot="/movies" location="movies.war" />
+
+    <cors domain="/movies/api"
+            allowedOrigins="http://localhost:4200"
+            allowedMethods="GET, DELETE, POST, PUT"
+            allowedHeaders="accept"
+            allowCredentials="true"
+            maxAge="3600"
+    />
 
     <!-- Default SSL configuration enables trust for default certificates from the Java runtime -->
     <ssl id="defaultSSLConfig" trustDefaultCerts="true" />

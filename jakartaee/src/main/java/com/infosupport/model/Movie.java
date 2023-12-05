@@ -1,30 +1,7 @@
 package com.infosupport.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import java.io.Serializable;
+import java.util.Set;
 
-@Entity
-public class Movie {
-    @Id
-    @GeneratedValue
-    private Integer id;
-
-    private String name;
-
-    public Movie(String name) {
-        this.name = name;
-    }
-
-    public Movie() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String toString() {
-        return name;
-    }
+public record Movie(String name, Set<Actor> actors) implements Serializable {
 }

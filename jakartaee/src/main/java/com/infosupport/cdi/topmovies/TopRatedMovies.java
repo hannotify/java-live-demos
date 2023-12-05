@@ -1,14 +1,14 @@
 package com.infosupport.cdi.topmovies;
 
 import com.infosupport.model.Movie;
-import jakarta.enterprise.inject.Alternative;
+import com.infosupport.model.MovieEntity;
 
 import java.util.List;
 
 @TopRated
 public class TopRatedMovies implements TopMovies {
     @Override
-    public List<Movie> listTopMovies() {
-        return List.of(new Movie("Memento"), new Movie("Shawshank Redemption"));
+    public List<MovieEntity> listTopMovies() {
+        return List.of(new MovieEntity("Memento"), new MovieEntity("Shawshank Redemption"));
     }
 }

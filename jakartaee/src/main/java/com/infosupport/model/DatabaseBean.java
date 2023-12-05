@@ -20,16 +20,16 @@ public class DatabaseBean {
     @Inject
     HelloBean bean;
 
-    public Collection<Movie> getAllMovies() {
-        return List.of(new Movie("Goodfellas"),
-                new Movie("Forrest Gump"),
-                new Movie("Notting Hill"),
-                new Movie("Barbie")
+    public Collection<MovieEntity> getAllMovies() {
+        return List.of(new MovieEntity("Goodfellas"),
+                new MovieEntity("Forrest Gump"),
+                new MovieEntity("Notting Hill"),
+                new MovieEntity("Barbie")
         );
     }
 
-    public Movie retrieveMovie(Integer id) throws MovieNotFoundException {
-        var movie = em.find(Movie.class, id);
+    public MovieEntity retrieveMovie(Integer id) throws MovieNotFoundException {
+        var movie = em.find(MovieEntity.class, id);
 
         if (movie == null) {
             throw new MovieNotFoundException("Movie not found.");
@@ -39,7 +39,7 @@ public class DatabaseBean {
     }
 
     public void addMovie(String name) {
-        em.persist(new Movie(name));
+        em.persist(new MovieEntity(name));
     }
 
     public void deleteMovie(Integer id) throws MovieNotFoundException {
