@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class MovieResourceTest {
     @BeforeAll
     public void setup() {
-        when().put(restUrl())
+        //when().put(restUrl())
     }
 
     @Test

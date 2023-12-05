@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/concurrency-in-java/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/db-jdbc/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/db-jdbc/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jakartaee/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jakartaee/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/javamod/jigsaw/reflection/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/javamod/jigsaw/reflection/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/javamod/jigsaw/src/main/java" charset="UTF-8" />
@@ -15,6 +17,8 @@
     <file url="file://$PROJECT_DIR$/javamod/jigsaw/training-application/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/javamod/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/javamod/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/javaweb/javaweb-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/javaweb/javaweb-demo/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/javaweb/movies-web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/javaweb/movies-web/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jpa/inheritance/src/main/java" charset="UTF-8" />
@@ -26,6 +30,11 @@
     <file url="file://$PROJECT_DIR$/jpa/relationships/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jpa/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jpa/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/practice/movies-practice/movie-manager/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/practice/movies-practice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/practice/movies-practice/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/practice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/practice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/streams/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/streams/src/main/resources" charset="UTF-8" />
   </component>

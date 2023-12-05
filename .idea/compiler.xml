@@ -10,18 +10,27 @@
         <module name="relationships" />
         <module name="dbjdbc" />
         <module name="reflection" />
-        <module name="javaweb" />
+        <module name="movies (1)" />
+        <module name="movies (2)" />
         <module name="streams" />
-        <module name="jakartaee" />
         <module name="training-application" />
         <module name="student-service" />
         <module name="inheritance" />
         <module name="concurrency-in-java" />
+        <module name="javaweb-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="award-announcer" target="17" />
+      <module name="jakartaee" target="1.7" />
+      <module name="javaweb" target="1.7" />
       <module name="jpa (1)" target="21" />
       <module name="jpa (2)" target="21" />
+      <module name="movie-manager" target="17" />
+      <module name="movies" target="17" />
+      <module name="movies-practice" target="17" />
+      <module name="movies-practice (1)" target="17" />
+      <module name="movies-practice (2)" target="17" />
       <module name="movies-web" target="16" />
     </bytecodeTargetLevel>
   </component>
