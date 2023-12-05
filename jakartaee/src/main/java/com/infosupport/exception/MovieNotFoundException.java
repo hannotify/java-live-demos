@@ -6,6 +6,8 @@ import jakarta.ws.rs.ext.Provider;
 
 @Provider
 public class MovieNotFoundException extends Exception implements ExceptionMapper<MovieNotFoundException> {
+    public MovieNotFoundException() {
+    }
     public MovieNotFoundException(String message) {
         super(message);
     }
