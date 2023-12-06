@@ -9,11 +9,12 @@
         <feature>mdb-4.0</feature>
         <feature>persistence-3.1</feature>
         <feature>adminCenter-1.0</feature>
+        <feature>mpJwt-2.1</feature>
     </featureManager>
 
-    <administrator-role>
-        <user>hanno</user>
-    </administrator-role>
+<!--    <administrator-role>-->
+<!--        <user>hanno</user>-->
+<!--    </administrator-role>-->
 
     <logging traceSpecification="eclipselink=all" />
 
@@ -65,7 +66,15 @@
         <!--
         <user name="yourUserName" password="" />
         -->
-        <user name="hanno" password="hermanus" />
+<!--        <user name="hanno" password="hermanus" />-->
+<!--        <user name="joep" password="ikeethannosontbijt" />-->
+
+<!--        <group name="Beheerders">-->
+<!--            <member name="hanno" />-->
+<!--        </group>-->
+<!--        <group name="Gebruikers">-->
+<!--            <member name="joep" />-->
+<!--        </group>-->
     </basicRegistry>
 
     <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
@@ -77,7 +86,16 @@
     <applicationManager autoExpand="true"/>
 
     <!-- Configures the application on a specified context root -->
-    <webApplication contextRoot="/movies" location="movies.war" />
+    <webApplication contextRoot="/movies" location="movies.war">
+<!--        <application-bnd>-->
+<!--            <security-role name="admin">-->
+<!--                <group name="Beheerders" />-->
+<!--            </security-role>-->
+<!--            <security-role name="reader">-->
+<!--                <group name="Gebruikers" />-->
+<!--            </security-role>-->
+<!--        </application-bnd>-->
+    </webApplication>
 
     <cors domain="/movies/api"
             allowedOrigins="http://localhost:4200"
@@ -85,9 +103,6 @@
             allowedHeaders="Referer, Content-Type, Accept, Authorization"
             allowCredentials="true"
             maxAge="3600"/>
-</server>
-
-
 
     <!-- Default SSL configuration enables trust for default certificates from the Java runtime -->
     <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
