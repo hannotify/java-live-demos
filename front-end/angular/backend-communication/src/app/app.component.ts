@@ -25,8 +25,8 @@ export class AppComponent {
       this.hello = greeting;
     });
 
-    this.http.delete<Greeting>('http://localhost:9080/movies/api/hello').subscribe(greeting => {
-      console.log('DELETE request succeeded');
+    this.http.post<Greeting>('http://localhost:9080/movies/api/hello', {}).subscribe(greeting => {
+      console.log('POST request succeeded');
     });
   }
 }

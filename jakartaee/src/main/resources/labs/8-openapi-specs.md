@@ -9,6 +9,6 @@ Now we want to add OpenAPI documentation, so that our end users can understand o
 The reason this works is because OpenLiberty automatically incorporates a Swagger UI in its setup.
 Not all EE Containers do that.
 If you ever encounter an environment where you miss the Swagger UI, you can always paste an `openapi.yaml` into the editor at https://editor.swagger.io.
-The `openapi.yaml` that OpenLiberty generates can be found at http://localhost:9080/openapi/ui/. 
+The `openapi.yaml` that OpenLiberty generates can be found at http://localhost:9080/openapi/. 
 
 4. Try this out.
