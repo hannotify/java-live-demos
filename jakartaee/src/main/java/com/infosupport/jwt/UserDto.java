@@ -1,5 +1,6 @@
 package com.infosupport.jwt;
 
+import java.util.Objects;
 import java.util.Set;
 
 public class UserDto {
@@ -52,5 +53,28 @@ public class UserDto {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserDto userDto = (UserDto) o;
+        return Objects.equals(username, userDto.username) && Objects.equals(password, userDto.password) && Objects.equals(roles, userDto.roles);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, password, roles);
+    }
+
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", roles=" + roles +
+                ", token='" + token + '\'' +
+                '}';
     }
 }

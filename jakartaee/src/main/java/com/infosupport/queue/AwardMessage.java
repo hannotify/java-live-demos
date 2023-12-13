@@ -1,8 +1,8 @@
 package com.infosupport.queue;
 
-import com.infosupport.model.Movie;
+import com.infosupport.model.MovieWithActor;
 
 import java.io.Serializable;
 
-public record AwardMessage(String message, Movie movie) implements Serializable {
+public record AwardMessage(String message, MovieWithActor movie) implements Serializable {
 }

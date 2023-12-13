@@ -1,6 +1,5 @@
 package com.infosupport.cdi.greeter;
 
-import com.infosupport.model.Movie;
 import com.infosupport.model.MovieEntity;
 import jakarta.enterprise.inject.Produces;
 

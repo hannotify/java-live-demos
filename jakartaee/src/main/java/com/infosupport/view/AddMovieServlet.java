@@ -2,7 +2,7 @@ package com.infosupport.view;
 
 import com.infosupport.events.MovieAdded;
 import com.infosupport.model.DatabaseBean;
-import com.infosupport.model.Movie;
+import com.infosupport.model.MovieDto;
 import com.infosupport.model.MovieEntity;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.event.Event;
@@ -14,6 +14,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @WebServlet("/addMovie")
 public class AddMovieServlet extends HttpServlet {
@@ -26,7 +28,7 @@ public class AddMovieServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String homeAlone = "Home Alone";
-        databaseBean.addMovie(homeAlone);
+        databaseBean.addMovie(new MovieDto(homeAlone, BigDecimal.TEN, LocalDate.now()));
         movieAddedEvent.fire(new MovieAdded(new MovieEntity(homeAlone)));
     }
 }

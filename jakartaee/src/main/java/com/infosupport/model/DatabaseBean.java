@@ -38,8 +38,8 @@ public class DatabaseBean {
         return movie;
     }
 
-    public void addMovie(String name) {
-        em.persist(new MovieEntity(name));
+    public void addMovie(MovieDto movie) {
+        em.persist(new MovieEntity(movie.name(), movie.rating(), movie.releaseDate()));
     }
 
     public void deleteMovie(Integer id) throws MovieNotFoundException {

@@ -16,6 +16,7 @@
         <module name="jpql" />
         <module name="relationships" />
         <module name="security" />
+        <module name="email-sender" />
         <module name="student-service" />
         <module name="concurrency-in-java" />
         <module name="javaweb-demo" />
@@ -23,6 +24,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="award-announcer" target="17" />
+      <module name="email-sender (1)" target="17" />
+      <module name="email-sender (2)" target="16" />
       <module name="jakartaee" target="1.7" />
       <module name="javaweb" target="1.7" />
       <module name="jpa (1)" target="21" />

@@ -1,7 +1,7 @@
 package com.infosupport.queue.awards;
 
 import com.infosupport.model.Actor;
-import com.infosupport.model.Movie;
+import com.infosupport.model.MovieWithActor;
 import com.infosupport.queue.AwardMessage;
 import com.infosupport.queue.AwardsQueue;
 import jakarta.inject.Inject;
@@ -20,11 +20,11 @@ public class AwardAnnouncerServlet extends HttpServlet {
     @Inject
     AwardsQueue queue;
 
-    List<Movie> movies = List.of(
-            new Movie("Barbie", Set.of(new Actor("Margot", "Robbie"), new Actor("Ryan", "Gosling"))),
-            new Movie("Oppenheimer", Set.of(new Actor("Cilian", "Murphy"), new Actor("Emily", "Blunt"))),
-            new Movie("The Bucket List", Set.of(new Actor("Jack", "Nicholson"), new Actor("Morgan", "Freeman"))),
-            new Movie("The King's Speech", Set.of(new Actor("Colin", "Firth"), new Actor("Helena", "Bonham Carter")))
+    List<MovieWithActor> movies = List.of(
+            new MovieWithActor("Barbie", Set.of(new Actor("Margot", "Robbie"), new Actor("Ryan", "Gosling"))),
+            new MovieWithActor("Oppenheimer", Set.of(new Actor("Cilian", "Murphy"), new Actor("Emily", "Blunt"))),
+            new MovieWithActor("The Bucket List", Set.of(new Actor("Jack", "Nicholson"), new Actor("Morgan", "Freeman"))),
+            new MovieWithActor("The King's Speech", Set.of(new Actor("Colin", "Firth"), new Actor("Helena", "Bonham Carter")))
     );
 
     @Override
@@ -33,11 +33,11 @@ public class AwardAnnouncerServlet extends HttpServlet {
         announceAward(pickMovie());
     }
 
-    private void announceAward(Movie movie) {
+    private void announceAward(MovieWithActor movie) {
         queue.send(new AwardMessage("This movie has won an award!!", movie));
     }
 
-    private Movie pickMovie() {
+    private MovieWithActor pickMovie() {
         return movies.get(ThreadLocalRandom.current().nextInt(movies.size() - 1));
     }
 }
