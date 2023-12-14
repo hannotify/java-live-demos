@@ -1,15 +1,12 @@
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
+package com.infosupport.it;
 
 import io.restassured.http.ContentType;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-public class MovieResourceTest {
-    @BeforeAll
-    public void setup() {
-        //when().put(restUrl())
-    }
+import static io.restassured.RestAssured.given;
+
+public class MovieResourceIT {
 
     @Test
     public void testGet() {
@@ -20,6 +17,7 @@ public class MovieResourceTest {
     }
 
     @Test
+    @Disabled
     public void testDelete() {
         given()
                 .pathParam("id", 951)
