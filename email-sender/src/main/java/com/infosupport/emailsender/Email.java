@@ -23,6 +23,13 @@ public class Email {
     public Email() {
     }
 
+    public Email(EmailUser sender, EmailUser recipient, String subject, String body) {
+        this.sender = sender;
+        this.recipient = recipient;
+        this.subject = subject;
+        this.body = body;
+    }
+
     public Message toMessage() throws MessagingException {
         var message = new MimeMessage(session);
 
