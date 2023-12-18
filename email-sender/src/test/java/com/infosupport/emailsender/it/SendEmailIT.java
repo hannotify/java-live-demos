@@ -7,6 +7,7 @@ import com.infosupport.emailsender.EmailUser;
 import jakarta.mail.Address;
 import jakarta.mail.Message;
 import jakarta.mail.MessagingException;
+import jakarta.mail.internet.InternetAddress;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
@@ -34,15 +35,15 @@ public class SendEmailIT {
         var receivedMessage = receivedMessages[0];
         assertThat(receivedMessage.getSubject()).isEqualTo(expectedEmail.subject());
 
-//        Address[] fromRecipients = receivedMessage.getFrom();
-//        assertThat(fromRecipients).hasSize(1);
-//        assertThat(fromRecipients[0].getType()).isEqualTo(expectedEmail.sender().emailAddress());
+        Address[] fromRecipients = receivedMessage.getFrom();
+        assertThat(fromRecipients).hasSize(1);
+        assertThat(fromRecipients[0]).isEqualTo(new InternetAddress(expectedEmail.sender().emailAddress()));
 
-        assertThat(receivedMessage.getContent()).isEqualTo(expectedEmail.body());
+        assertThat(receivedMessage.getContent().toString()).isEqualToNormalizingNewlines(expectedEmail.body());
 
-//        Address[] toRecipients = receivedMessage.getRecipients(Message.RecipientType.TO);
-//        assertThat(toRecipients).hasSize(1);
-//        assertThat(toRecipients[0].toString()).isEqualTo(expectedEmail.recipient().emailAddress());
+        Address[] toRecipients = receivedMessage.getRecipients(Message.RecipientType.TO);
+        assertThat(toRecipients).hasSize(1);
+        assertThat(toRecipients[0]).isEqualTo(new InternetAddress(expectedEmail.recipient().emailAddress()));
     }
 
     private Email buildExpectedEmail() {
