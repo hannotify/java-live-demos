@@ -61,7 +61,7 @@ public class UserResource {
         return issueToken(userDto);
     }
 
-    private String issueToken(UserDto userDto) throws GeneralSecurityException, IOException {
+    static String issueToken(UserDto userDto) throws GeneralSecurityException, IOException {
         return Jwt.issuer("infosupport")
                 .subject("movies")
                 .upn(userDto.getUsername())

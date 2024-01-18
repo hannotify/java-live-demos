@@ -1,0 +1,21 @@
+
+p
+@jakartaee/src/test/java/com/infosupport/jwt/GenerateJwtTest.java,3/c/3c876899aca06179b641d955304ef0b28e494e3d
+|
+Ljakartaee/src/test/java/com/infosupport/cdi/topmovies/TopMoviesBeanTest.java,5/4/54aa88aca4c19a41d2d68ba50af95fcfcba74f14
+A
+jakartaee/pom.xml,8/8/88089b3435f96f6f4801d506e088a967ccb131d9
+m
+=jakartaee/src/main/java/com/infosupport/jwt/PasswordUtil.java,a/5/a51991fec4d616c6d8485f72ca79fea48ebe9ea5
+t
+Djakartaee/src/main/java/com/infosupport/rest/HelloWorldResource.java,8/8/88ed126ee926cc09e621d742932b4e7ffc8982f2
+s
+Cjakartaee/src/test/java/com/infosupport/jwt/UserRepositoryTest.java,a/3/a31b546191a85cd88e68808ba4ae40ce5c2652c5
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+_
+/practice/src/main/java/validation/MovieDto.java,3/2/322cafb6ccb074242a7091232405f52070382aa8
+@
+practice/pom.xml,3/c/3c56d36dbf06889ff38b0c28a39439af9f19ed03
+f
+6practice/src/main/java/validation/MovieRepository.java,8/7/87686f3d952144a039baddb6fcd164cd6cf5b7dc
